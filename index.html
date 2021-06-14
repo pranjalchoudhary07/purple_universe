@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Purple Universe</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Purple Universe</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="images/stars.png" id="stars">
+            <img src="images/moon.png" id="moon">
+            <img src="images/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="images/mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Effect</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare sem eu tortor consequat, ut lacinia enim porttitor. Mauris ut lobortis purus. Curabitur volutpat metus nunc, id ullamcorper leo porta a. Mauris placerat magna at elit venenatis, sit amet laoreet ligula auctor. Duis in turpis bibendum urna dignissim pretium auctor quis ligula. Nam id tortor lacus. Vivamus euismod condimentum enim a lacinia. Duis cursus laoreet rhoncus. Donec imperdiet velit ut malesuada mattis. Quisque quis auctor est, at fringilla lorem. Vivamus eleifend libero id augue eleifend cursus. Suspendisse interdum lectus urna. <br> <br>
+
+            Pellentesque mattis magna iaculis turpis varius, id tempor est varius. Nulla eget nulla neque. In sed ante ac lorem condimentum eleifend. Sed convallis aliquet nisl ac iaculis. Ut pharetra enim id purus bibendum vehicula. Nullam rutrum finibus pharetra. Vivamus at diam consectetur, viverra odio nec, porttitor mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris porttitor gravida pharetra. Ut semper tempus mi, et finibus arcu blandit at. Fusce augue mi, vestibulum in arcu ut, placerat vulputate ligula. Donec lacinia turpis at ipsum semper tincidunt. Mauris rhoncus elit dolor, eu ornare augue lobortis eget. Donec non nunc quis enim placerat egestas in et neque. <br><br>
+            
+            Fusce fringilla venenatis placerat. Proin quis molestie enim, eget efficitur lacus. Ut interdum scelerisque ipsum laoreet sodales. Curabitur et ipsum in odio bibendum placerat quis eget orci. Donec at erat mi. Donec porta, ante at vehicula lacinia, massa ipsum commodo massa, quis iaculis odio enim ac mauris. Proin in efficitur arcu, ornare rhoncus eros. Aenean posuere malesuada dolor, ut tempor eros cursus ut. Sed at nisi consectetur, sollicitudin lectus ut, fermentum massa. Nullam nec dolor egestas, lobortis nibh eu, feugiat nisl. Vestibulum a cursus augue. Aliquam ornare augue in sapien mattis, sed fringilla purus sagittis. Sed dictum mollis dui, sed placerat ipsum tempus quis. In hac habitasse platea dictumst. Integer at pulvinar ex. 
+            
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+
+        </script>
+    </body>
+</html>
